@@ -17,8 +17,8 @@ void main() {
     set_bkg_data(37, 7, backgroundtiles);
     set_bkg_tiles(0, 0, 40, 18, background);
 
-    set_win_tiles(0, 0, 5, 1, window);
-    move_win(7,120);
+    set_win_tiles(0, 0, 7, 1, window);
+    move_win(7,130);
 
     SHOW_BKG;
     SHOW_WIN;
@@ -35,7 +35,9 @@ void main() {
             break;
         }
 
-        printf("%i", velocity);
+        if(velocity < 0) {
+            velocity = 0;
+        }
 
         scroll_bkg(velocity, 0);
         delay(100);
